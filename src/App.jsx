@@ -40,7 +40,7 @@ export default function EcoplanetCalculator() {
   ];
 
   function formatPreis(val) {
-    return val.toFixed(3).replace('.', ',');
+    return (val * 100).toFixed(1).replace('.', ',');
   }
 
   function nextStep() {
@@ -134,7 +134,7 @@ export default function EcoplanetCalculator() {
               onChange={e => setArbeitspreis(parseFloat(e.target.value))}
               className="w-full"
             />
-            <div className="text-right mt-2 font-semibold text-[#00852e]">{formatPreis(arbeitspreis)} €/kWh</div>
+            <div className="text-right mt-2 font-semibold text-[#00852e]">{formatPreis(arbeitspreis)} ct/kWh</div>
           </div>
         </>
       )}
@@ -147,9 +147,14 @@ export default function EcoplanetCalculator() {
               <p className="text-xl md:text-2xl font-bold">{(savingsPercent * 100).toFixed(2)} %</p>
             </div>
             <div className="flex flex-col items-center justify-center h-48">
-              <p className="text-xs md:text-sm text-[#888] text-center">Ihr möglicher Strompreis mit Ecoplanet im Jahr {jahr}</p>
-              <p className="text-4xl md:text-5xl font-extrabold text-[#00852e] mt-2">{formatPreis(ecoplanetPreis)} €/kWh</p>
+              <p className="text-xs md:text-sm text-[#888] text-center">Ihr möglicher Strompreis mit ecoplanet im Jahr {jahr}</p>
+              <p className="text-4xl md:text-5xl font-extrabold text-[#00852e] mt-2">{formatPreis(ecoplanetPreis)} ct/kWh</p>
             </div>
+          </div>
+          <div className="flex justify-center mt-4">
+            <a href="https://www.ecoplanet.tech/unternehmen/produktdemo" target="_blank" rel="noopener noreferrer" className="bg-[#00852e] text-white px-4 py-2 rounded">
+              Jetzt Angebot sichern
+            </a>
           </div>
         </>
       )}
