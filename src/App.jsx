@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BatteryLow, BatteryMedium, BatteryFull, Sun, Clock, MoonStar } from "lucide-react";
 
 /**
  * EcoplanetCalculator
@@ -27,15 +28,15 @@ export default function EcoplanetCalculator() {
   ];
 
   const verbrauchOptions = [
-    { label: "< 2 GWh", value: "unter2" },
-    { label: "2–10 GWh", value: "zwischen2und10" },
-    { label: "> 10 GWh", value: "ueber10" },
+    { label: "< 2 GWh", value: "unter2", icon: BatteryLow },
+    { label: "2–10 GWh", value: "zwischen2und10", icon: BatteryMedium },
+    { label: "> 10 GWh", value: "ueber10", icon: BatteryFull },
   ];
 
   const schichtOptions = [
-    { label: "1-Schicht", value: "1schicht" },
-    { label: "2-Schicht", value: "2schicht" },
-    { label: "3-Schicht", value: "3schicht" },
+    { label: "1-Schicht", value: "1schicht", icon: Sun },
+    { label: "2-Schicht", value: "2schicht", icon: Clock },
+    { label: "3-Schicht", value: "3schicht", icon: MoonStar },
   ];
 
   function formatPreis(val) {
@@ -79,15 +80,16 @@ export default function EcoplanetCalculator() {
       <div
         key={option.value}
         onClick={() => onSelect(option.value)}
-        className={`cursor-pointer border-2 rounded p-4 text-center ${selected === option.value ? 'border-[#00852e]' : 'border-[#eee]'}`}
+        className={`cursor-pointer border-2 rounded p-4 text-center flex flex-col items-center gap-2 ${selected === option.value ? 'border-[#00852e]' : 'border-[#eee]'}`}
       >
-        {option.label}
+        {option.icon && <option.icon size={24} />}
+        <span>{option.label}</span>
       </div>
     );
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 font-geist text-[#222]">
+    <div className="max-w-3xl mx-auto p-6 font-[Geistvf] text-[#222]">
       <div className="mb-6 text-center text-[#888]">
         {step < 4 ? `Schritt ${step + 1} von 5` : 'Ergebnis'}
       </div>
