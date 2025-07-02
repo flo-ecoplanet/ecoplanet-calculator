@@ -89,7 +89,7 @@ export default function EcoplanetCalculator() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 font-[Geistvf] text-[#222]">
+    <div className="max-w-3xl mx-auto p-6 font-geist text-[#222]">
       <div className="mb-6 text-center text-[#888]">
         {step < 4 ? `Schritt ${step + 1} von 5` : 'Ergebnis'}
       </div>
