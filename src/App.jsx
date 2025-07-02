@@ -89,7 +89,7 @@ export default function EcoplanetCalculator() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 font-geist text-[#222]">
+    <div className="max-w-3xl mx-auto p-6 font-[Geistvf] text-[#222]">
       <div className="mb-6 text-center text-[#888]">
         {step < 4 ? `Schritt ${step + 1} von 5` : 'Ergebnis'}
       </div>
@@ -141,14 +141,14 @@ export default function EcoplanetCalculator() {
 
       {step === 4 && (
         <>
-          <div className="relative bg-white border border-[#eee] rounded-lg p-6 mb-6">
+          <div className="relative bg-white border border-[#eee] rounded-lg p-4 md:p-6 mb-6">
             <div className="absolute top-4 left-4 text-[#00852e]">
-              <p>Ihre Einsparung</p>
-              <p className="text-2xl font-bold">{(savingsPercent * 100).toFixed(2)} %</p>
+              <p className="text-sm md:text-base">Ihre Einsparung</p>
+              <p className="text-xl md:text-2xl font-bold">{(savingsPercent * 100).toFixed(2)} %</p>
             </div>
             <div className="flex flex-col items-center justify-center h-48">
-              <p className="text-sm text-[#888]">Ihr möglicher Strompreis mit Ecoplanet im Jahr {jahr}</p>
-              <p className="text-5xl font-extrabold text-[#00852e] mt-2">{formatPreis(ecoplanetPreis)} €/kWh</p>
+              <p className="text-xs md:text-sm text-[#888] text-center">Ihr möglicher Strompreis mit Ecoplanet im Jahr {jahr}</p>
+              <p className="text-4xl md:text-5xl font-extrabold text-[#00852e] mt-2">{formatPreis(ecoplanetPreis)} €/kWh</p>
             </div>
           </div>
         </>
