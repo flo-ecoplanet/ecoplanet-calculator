@@ -151,11 +151,6 @@ export default function EcoplanetCalculator() {
               <p className="text-4xl md:text-5xl font-extrabold text-[#00852e] mt-2">{formatPreis(ecoplanetPreis)} ct/kWh</p>
             </div>
           </div>
-          <div className="flex justify-center mt-4">
-            <a href="https://www.ecoplanet.tech/unternehmen/produktdemo" target="_blank" rel="noopener noreferrer" className="bg-[#00852e] text-white px-4 py-2 rounded">
-              Jetzt Angebot sichern
-            </a>
-          </div>
         </>
       )}
 
@@ -165,7 +160,7 @@ export default function EcoplanetCalculator() {
             Zurück
           </button>
         )}
-        <div className="ml-auto">
+        <div className="ml-auto flex gap-4">
           {step < 3 && (
             <button onClick={nextStep} className="bg-[#00852e] text-white px-4 py-2 rounded">
               Weiter
@@ -175,6 +170,16 @@ export default function EcoplanetCalculator() {
             <button onClick={nextStep} className="bg-[#00852e] text-white px-4 py-2 rounded">
               Berechnen
             </button>
+          )}
+          {step === 4 && (
+            <a
+              href="https://www.ecoplanet.tech/unternehmen/produktdemo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#00852e] text-white px-4 py-2 rounded"
+            >
+              Jetzt Angebot sichern
+            </a>
           )}
         </div>
       </div>
