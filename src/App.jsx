@@ -56,7 +56,7 @@ export default function EcoplanetCalculator() {
   }
 
   function calculateResults() {
-    let basePrice = jahr === '2027' ? 0.072 : jahr === '2028' ? 0.069 : 0.078;
+    let basePrice = jahr === '2027' ? 0.075 : jahr === '2028' ? 0.067 : 0.082;
     const randomFactor = 1 + (Math.random() * 0.06 - 0.03);
     const ecoPrice = basePrice * randomFactor;
     setEcoplanetPreis(ecoPrice);
