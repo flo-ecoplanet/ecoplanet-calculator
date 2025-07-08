@@ -123,7 +123,7 @@ export default function EcoplanetCalculator() {
 
       {step === 3 && (
         <>
-          <h2 className="text-2xl font-semibold text-center mb-4">Arbeitspreis eingeben</h2>
+          <h2 className="text-2xl font-semibold text-center mb-4">Aktuellen Arbeitspreis eingeben</h2>
           <div className="px-4 mb-8">
             <input
               type="range"
