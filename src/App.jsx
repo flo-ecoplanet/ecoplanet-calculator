@@ -127,7 +127,7 @@ export default function EcoplanetCalculator() {
           <div className="px-4 mb-8">
             <input
               type="range"
-              min={0}
+              min={0.08}
               max={0.40}
               step={0.001}
               value={arbeitspreis}
